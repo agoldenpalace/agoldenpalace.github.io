@@ -7,7 +7,7 @@
 
 /* Tema escuro e cores */
 body {
-    background-color: #121212;
+    background-color: #000;
     color: #ffffff;
     font-family: Arial, sans-serif;
 }
@@ -115,3 +115,42 @@ a:hover {
     font-size: 1.2rem;
     color: #d9b3ff;
   }
+
+.article-container {
+    max-width: 600px;
+    background-color: #000;
+    box-shadow: 0 0 130px rgba(122, 0, 0, 1);
+    padding: 10px;
+    border: 1px solid #800080;
+}
+
+.main-header {
+    /* Estilos do cabeçalho principal */
+}
+
+.article-header { /* Estilo específico para o cabeçalho do post */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 2px;
+}
+
+.article-header h1 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.article-header .date {
+    font-size: 0.9em;
+    opacity: 0.8;
+}
+
+.content {
+    margin-top: 20px;
+    font-size: 1em;
+    color: #FFF;
+    line-height: 1.6;
+}
