@@ -21,6 +21,57 @@ a:hover {
     color: #d9b3ff;
 }
 
+        /* Estilos específicos para a home */
+        .home-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #800080;
+            margin-bottom: 20px;
+            font-size: 1em;
+        }
+
+        .article-card {
+            background-color: #1c1c1c;
+            border: 1px solid #800080;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 10px 0;
+            color: #fff;
+            text-align: left;
+        }
+
+        .article-card h2 {
+            margin: 0;
+            font-size: 1.5em;
+        }
+
+        .article-card p {
+            font-size: 0.9em;
+            color: #d9b3ff;
+        }
+
+        .tags {
+            margin-top: 20px;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: #800080;
+            color: #fff;
+            border-radius: 3px;
+            padding: 5px 10px;
+            margin: 5px;
+            text-decoration: none;
+        }
+
 /* Main Header - Fixo em tudo */
 .main-header {
     background-color: #1c1c1c;
