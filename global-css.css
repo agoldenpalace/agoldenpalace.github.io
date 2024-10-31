@@ -1,11 +1,11 @@
-/* Reset básico */
+/* General */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Tema escuro e cores */
+/* Body */
 body {
     background-color: #000;
     color: #ffffff;
@@ -21,7 +21,7 @@ a:hover {
     color: #d9b3ff;
 }
 
-/* Header fixo */
+/* Main Header - Fixo em tudo */
 .main-header {
     background-color: #1c1c1c;
     color: #ffffff;
@@ -101,7 +101,7 @@ a:hover {
 }
 
 /* Conteúdo Principal */
-.content {
+.main-content {
     margin-top: 80px;
     padding: 1rem;
 }
@@ -114,9 +114,10 @@ a:hover {
 .home-content p {
     font-size: 1.2rem;
     color: #d9b3ff;
-  }
+}
 
-.article-container {
+/* Posts Container */
+.p-container {
     max-width: 600px;
     background-color: #000;
     box-shadow: 0 0 130px rgba(122, 0, 0, 1);
@@ -124,11 +125,7 @@ a:hover {
     border: 1px solid #800080;
 }
 
-.main-header {
-    /* Estilos do cabeçalho principal */
-}
-
-.article-header { /* Estilo específico para o cabeçalho do post */
+.p-header { /* Estilo específico para o cabeçalho do post */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -138,19 +135,51 @@ a:hover {
     border-radius: 2px;
 }
 
-.article-header h1 {
+.p-header h1 {
     margin: 0;
     font-size: 1.5em;
 }
 
-.article-header .date {
+.p-header .date {
     font-size: 0.9em;
     opacity: 0.8;
 }
 
-.content {
+.p-content {
     margin-top: 20px;
     font-size: 1em;
     color: #FFF;
     line-height: 1.6;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    /* Exemplo de ajuste para telas menores */
+    .sidebar {
+        width: 200px; /* Reduzir a largura da sidebar em telas menores */
+    }
+
+    .menu-icon {
+        font-size: 1.2rem; /* Ajustar o tamanho do ícone do menu */
+    }
+
+    .p-container {
+        padding: 5px; /* Reduzir o padding dos posts */
+    }
+
+    .p-header h1 {
+        font-size: 1.2em; /* Ajustar o tamanho do título do post */
+    }
+
+    .main-content {
+        margin-top: 60px; /* Ajustar a margem do conteúdo principal */
+    }
+
+    .home-content h1 {
+        font-size: 1.5rem; /* Ajustar o tamanho do título na página inicial */
+    }
+
+    .home-content p {
+        font-size: 1rem; /* Ajustar o tamanho do texto na página inicial */
+    }
 }
