@@ -3,7 +3,86 @@ layout: default
 title: Golden Palace - Página Inicial
 ---
 
-<section class="home-content">
-    <h1>Bem-vindo ao Golden Palace</h1>
-    <p>Explore artigos variados sobre cibersegurança, culinária, gaming, hacking e muito mais!</p>
-</section>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golden Palace - About The About</title>
+    <link rel="stylesheet" href="/main/global-css.css"> 
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo"><img src="https://i.postimg.cc/PJNYXc7g/20241031-002346.png" alt="Logo"></div>
+        <div class="menu-icon">☰</div>
+    </header>
+
+    <div class="home-container">
+        <h1>Bem-vindo ao Golden Palace</h1>
+        <p>Explore algo interessante:</p>
+
+        <input type="text" class="search-box" placeholder="Pesquise seu maior sonho..." id="search-input">
+        <button onclick="searchPosts()">Fincar o Pino</button>
+
+        <div class="found-posts">
+            <h2>Resultados Encontrados</h2>
+            <div id="results-container"></div> <!-- Container para resultados da busca -->
+        </div>
+
+        <div class="tags">
+            <h2>Buscar por Categoria</h2>
+            <a href="/tags/ciber-seguranca" class="tag">Ciber Segurança</a>
+            <a href="/tags/culinaria" class="tag">Culinária</a>
+            <a href="/tags/gaming" class="tag">Gaming</a>
+            <a href="/tags/hacking" class="tag">Hacking</a>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@latest"></script>
+    <script>
+        let posts = [];
+
+        // Carregar o JSON gerado por Jekyll
+        fetch('/forum.json')
+            .then(response => response.json())
+            .then(data => {
+                posts = data;
+
+                // Configurar o Fuse.js
+                const options = {
+                    keys: ['title', 'tags', 'content'],
+                    threshold: 0.3
+                };
+
+                const fuse = new Fuse(posts, options); // Corrigido para "posts"
+
+                // Função de busca
+                document.querySelector("button").onclick = () => { // Modificado para usar o botão correto
+                    const query = document.getElementById('search-input').value;
+                    const results = fuse.search(query);
+
+                    // Limpar resultados anteriores
+                    const resultsContainer = document.getElementById('results-container');
+                    resultsContainer.innerHTML = '';
+
+                    // Exibir resultados
+                    if (results.length > 0) {
+                        results.forEach(result => {
+                            const post = result.item;
+                            const postCard = document.createElement('div');
+                            postCard.className = 'p-card';
+                            postCard.innerHTML = `
+                                <h2><a href="/posts/${post.slug}">${post.title}</a></h2>
+                                <p>${post.content.substring(0, 100)}...</p> <!-- Mostra um resumo do conteúdo -->
+                            `;
+                            resultsContainer.appendChild(postCard);
+                        });
+                    } else {
+                        resultsContainer.innerHTML = '<p>Nenhum artigo encontrado.</p>';
+                    }
+                };
+            })
+            .catch(err => console.error('Erro ao carregar artigos:', err));
+    </script>
+</body>
+</html>
