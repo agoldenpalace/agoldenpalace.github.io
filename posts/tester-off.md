@@ -1,1 +1,0 @@
-/* Potagem de teste */
