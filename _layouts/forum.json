@@ -1,0 +1,13 @@
+---
+layout: null
+---
+
+[
+{% for post in site.posts %}
+    {
+        "title": "{{ post.title }}",
+        "tags": [{{ post.tags | map: '"#{_}"' | join: ', ' }}],
+        "content": "{{ post.content | strip_html | escape }}"
+    }{% if forloop.last == false %},{% endif %}
+{% endfor %}
+]
