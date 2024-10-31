@@ -1,1 +1,117 @@
-/* Coming Soon */
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Tema escuro e cores */
+body {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+}
+
+a {
+    color: #b380ff;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #d9b3ff;
+}
+
+/* Header fixo */
+.main-header {
+    background-color: #1c1c1c;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.menu-icon {
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #ffffff;
+}
+
+.logo img {
+    height: 50px;
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: #1c1c1c;
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    padding: 1rem;
+    color: #ffffff;
+    transition: left 0.3s ease;
+    z-index: 999;
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+.site-name {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #b380ff;
+}
+
+.search-box {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    background-color: #121212;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+}
+
+.menu a {
+    display: block;
+    padding: 0.5rem 0;
+    color: #ffffff;
+}
+
+.footer {
+    position: absolute;
+    bottom: 1rem;
+    width: 100%;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #d9b3ff;
+}
+
+.settings-icon {
+    font-size: 1.2rem;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+/* Conteúdo Principal */
+.content {
+    margin-top: 80px;
+    padding: 1rem;
+}
+
+.home-content h1 {
+    font-size: 2rem;
+    color: #b380ff;
+}
+
+.home-content p {
+    font-size: 1.2rem;
+    color: #d9b3ff;
+  }
